@@ -16,16 +16,7 @@ public class NaiveBayesMapper extends Mapper<LongWritable, Text, Text, NaiveBaye
             Mapper<LongWritable, Text, Text, NaiveBayesWritable>.Context context)
             throws IOException, InterruptedException {
 
-        //double number = Double.parseDouble(value.toString());
-
         String[] row =  value.toString().split(";");
-        /*
-        try (
-            CSVReader csvReader = new CSVReader(new StringReader(value.toString()));
-        ) {
-            row = csvReader.readNext();
-        }
-        */
 
         naiveBayesWritable.initArrays(row.length - 1);
         for (int i = 0; i < row.length - 1; i++) {

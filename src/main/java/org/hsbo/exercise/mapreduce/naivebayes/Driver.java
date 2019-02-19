@@ -52,7 +52,6 @@ public class Driver {
 
         // output
         FileOutputFormat.setOutputPath(job, new Path(userArguments[1]));
-
         if (job.waitForCompletion(true)) {
             System.exit(0);
         } else {
